@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <script src="angularjs.js"></script>
+    <script src="module.js"></script>
+  </head>
+  <body>
+    <div>
+      <input type="text" placeholder="Enter any color" ng-model="color" />
+    </div>
+    <br />
+    <h2 ng-bind="color"></h2>
+    <br />
+    <!-- <div ng-controller="myController"> -->
+ 
+        <select>
+          <option ng-repeat="x in country">{{x}}</option>
+        </select>
+        <br>
+        <select class="form-control" id="country" name="country"  ng-options="c for c in country" ng-model="selectedCountry"></select>
+   
+      <h2 ng-bind="name"></h2>
+      <!-- //<h2>{{myhttp}}</h2> -->
+      <ul>
+        <h2>Name and ages of people are:</h2>
+        <li ng-repeat="person in persons">{{person.name +":" + person.age}}</li>
+      </ul>
+      <table border="1">
+        <tr>
+          <td>Name</td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter name"
+              ng-model="student.name"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Age</td>
+          <td>
+            <input type="text" placeholder="Enter age" ng-model="student.age" />
+          </td>
+        </tr>
+        <tr>
+          <td>City</td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter city"
+              ng-model="student.city"
+            />
+          </td>
+        </tr>
+      </table>
+      <br />
+      <br />
+      <table border="1">
+        <tr>
+          <td>Name</td>
+          <td>{{student.name}}</td>
+        </tr>
+        <tr>
+          <td>Age</td>
+          <td>{{student.age}}</td>
+        </tr>
+        <tr>
+          <td>City</td>
+          <td>{{student.city}}</td>
+        </tr>
+      </table>
+      <br />
+      <!-- <button type="submit" value="click" ng-click="add()">Click Me</button> -->
+
+      <br />
+      <input type="text" ng-focus="add()" />
+      <h2>{{number}}</h2>
+      <br />
+      <ul>
+        <li ng-repeat="items in fruits | orderBy:'-'" }>{{items}}</li>
+      </ul>
+      <br />
+      <ol>
+        <li ng-repeat="(x,y) in employee">{{x}} = {{y}}</li>
+      </ol>
+      <br />
+      <table border="1">
+        
+        <tr ng-hide="check">
+          <th>Name</th>
+          <th>Age</th>
+          <th >City</th>
+        </tr>
+        
+        <!-- <tr ng-repeat="x in class  | orderBy:'name':'reverse'">
+          <td>{{x.name}}</td>
+          <td>{{x.age}}</td>
+          <td>{{x.city}}</td>
+        </tr> -->
+        <input type="text" placeholder="Search here" ng-model="search" />
+        <input type="checkbox" ng-model="check" >Hide Table</input>
+      
+        <tr ng-repeat="x in class  | filter:search" ng-hide="check">
+         
+          <td>{{x.name}}</td>
+          <td>{{x.age}}</td>
+          <td>{{x.city}}</td>
+       
+        </tr>
+      
+      </table>
+      <br />
+      <h2>{{date | date:"dd-MM-yyyy"}}</h2>
+      <br />
+      <input type="checkbox" ng-model="show" >Show Me</input>
+      <div ng-show="show">
+        <p>Shows the content</p>
+      </div>
+      <div ng-include="'class.html'">
+        
+      </div>
+    <div>{{url}}</div>
+    <div>{{count}}</div>
+    <div>{{dateAndTime | date:'dd-MM-yyyy hh:mm:ss a'}}</div>
+    <div>{{name}}</div>
+    <input type="text" placeholder="enter name..." ng-model="urname">
+    <input type="button" value="Click to see Alert" ng-click="DisplayAlert(urname)"><br>
+    <input type="button" value="Click to see full name" ng-click="DisplayPrompt()">
+    </div>
+
+   
+      
+
+
+    
+
+
+
+    <div ng-controller="ctrl1">
+      <div ng-controller="ctrl2">
+      <h2>{{color}}</h2>
+      </div>
+    <!-- </div> -->
+  </body>
+</html>

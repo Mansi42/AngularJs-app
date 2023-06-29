@@ -1,0 +1,13 @@
+{
+  "links": [
+    {
+      "totalCases": "https://www.worldometers.info/coronavirus/#:~:text=Coronavirus%20Cases%3A,686%2C587%2C938"
+    },
+    {
+      "deaths": "https://www.worldometers.info/coronavirus/#:~:text=Deaths%3A,6%2C860%2C231"
+    },
+    {
+      "recovered": "https://www.worldometers.info/coronavirus/#:~:text=Recovered%3A,659%2C153%2C325"
+    }
+  ]
+}

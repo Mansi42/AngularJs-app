@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html ng-app="myApp1">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../lib/angular-route.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../angularjs.js"></script>
+    <script src="covidM.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script> -->
+  </head>
+  <body class="reg">
+    <div id="format1">
+      <form name="myForm" novalidate>
+        <h3>Registration Form</h3>
+        <div class="form-group">
+          <input
+            type="text"
+            name="name"
+            ng-model="name"
+            placeholder="Enter you name"
+            pattern="[a-zA-Z]{1,}"
+            required
+          /><br />
+          <span ng-show="myForm.$submitted || myForm.name.$dirty">
+            <span class="error" ng-show="myForm.name.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i>Name is
+              required</span
+            ><span class="error" ng-show="myForm.name.$error.pattern"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> Name is not
+              a number</span
+            ></span
+          >
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            name="email"
+            ng-model="email"
+            placeholder="Enter you email"
+            required
+          /><br />
+          <span ng-show="myForm.$submitted || myForm.email.$dirty">
+            <span class="error" ng-show="myForm.email.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> email is
+              required</span
+            ><span class="error" ng-show="myForm.email.$error.email"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> email is
+              invalid</span
+            ></span
+          >
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            name="password"
+            ng-model="password"
+            placeholder="Enter you password"
+            ng-minlength="8"
+            required
+          /><br />
+          <span ng-show="myForm.$submitted || myForm.password.$dirty">
+            <span class="error" ng-show="myForm.password.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> password is
+              required</span
+            ><span class="error" ng-show="myForm.password.$error.minlength"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> password
+              must be of 8 digits</span
+            ></span
+          >
+        </div>
+        <div class="form-group">
+          <input
+            type="radio"
+            name="gender"
+            ng-model="gender"
+            ng-value='"Male"'
+            required
+          />
+          <label>Male</label>
+          <input
+            type="radio"
+            name="gender"
+            ng-model="gender"
+            ng-value='"Female"'
+            required
+          />
+          <label>Female</label><br />
+          <span ng-show="myForm.$submitted || myForm.gender.$dirty">
+            <span class="error" ng-show="myForm.gender.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> gender is
+              required</span
+            ></span
+          >
+        </div>
+
+        <div class="form-group">
+          <input
+            type="date"
+            name="dob"
+            ng-model="dob"
+            placeholder="Enter date of birth"
+            required
+          /><br />
+          <span ng-show="myForm.$submitted || myForm.date.$dirty">
+            <span class="error" ng-show="myForm.date.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> Date is
+              required</span
+            ></span
+          >
+        </div>
+
+        <div class="form-group">
+          <textarea
+            type="textarea"
+            name="address"
+            ng-model="address"
+            placeholder="Enter your address"
+            required
+          ></textarea
+          ><br />
+          <span ng-show="myForm.$submitted || myForm.address.$dirty">
+            <span class="error" ng-show="myForm.address.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> Address is
+              required</span
+            ></span
+          >
+        </div>
+
+        <div class="form-group">
+          <input
+            type="number"
+            name="phoneNumber"
+            ng-model="phoneNumber"
+            placeholder="Enter your Number"
+            ng-maxlength="10"
+            ng-minlength="10"
+            required
+          /><br />
+          <span ng-show="myForm.$submitted || myForm.phoneNumber.$dirty">
+            <span class="error" ng-show="myForm.phoneNumber.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> Phone Number
+              is required</span
+            ><span
+              class="error"
+              ng-show="((myForm.phoneNumber.$error.minlength || myForm.phoneNumber.$error.maxlength))"
+            >
+              Phone Number must be of 10 digits</span
+            ></span
+          >
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary info"
+          ng-click="postData(name,email,password,gender,dob,address,phoneNumber)"
+        >
+          Register</button
+        ><br /><br />
+        <p>
+          Already have an account?
+          <a href=" Login Here" ng-click="goToLogin()">Login Here</a>
+        </p>
+      </form>
+    </div>
+    <br />
+    <br />
+
+    <table class="table table-dark table-hover" border="1">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Gender</th>
+        <th>DOB</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+      </tr>
+      <tr>
+        <td>{{Name}}</td>
+        <td>{{Email}}</td>
+        <td>{{Password}}</td>
+        <td>{{Gender}}</td>
+        <td>{{Dob}}</td>
+        <td>{{Address}}</td>
+        <td>{{PhoneNumber}}</td>
+      </tr>
+    </table>
+  </body>
+</html>

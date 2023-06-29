@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let highest = -Infinity;
+    let secondhighest = -Infinity;
+    let array = [50, 70, 30, 76, 98, 65, 20];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] > highest) {
+        secondhighest = highest;
+        highest = array[i];
+      }
+    }
+    document.write(array + "<br>");
+    document.write(secondhighest);
+  </script>
+</html>

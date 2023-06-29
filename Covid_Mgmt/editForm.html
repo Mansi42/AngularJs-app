@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html ng-app="myApp1">
+  <head>
+    <style>
+      .fulldiv {
+        background-color: rgb(248, 214, 120);
+        background-image: linear-gradient(rgb(170, 212, 224), rgb(77, 77, 71));
+        border: 3px solid rgb(32, 32, 31);
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 300px;
+        margin-right: 300px;
+        margin-top: 30px;
+      }
+      .error {
+        padding-left: 35px;
+        color: rgb(192, 31, 31);
+      }
+      h4 {
+        text-align: center;
+        color: rgb(192, 31, 31);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+<link href="vAppoint.html"/>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="covidM.js"></script>
+    <script src="../angularjs.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <ul class="nav navbar-nav">
+            <li><a href="#!home">HOME</a></li>
+            &nbsp;&nbsp;
+            <li><a href="#!about">ABOUT</a></li>
+            &nbsp;&nbsp;
+            <li><a href="#!details">DETAILS</a></li>
+            &nbsp;&nbsp;
+            <li><a href="#!users">USERS</a></li>
+          </ul>
+        </nav>
+        <div ng-view></div>
+      </div>
+     
+    </nav>
+  </head>
+  <body class="reg" >
+    <h4 style:{justify-content:center}>
+      Do you want to get Appointment for vaccination?
+    </h4>
+    <div class="fulldiv">
+      <form name="myForm" novalidate>
+        <h3>Fill the Form</h3>
+        <div class="form-group">
+            <input
+              type="text"
+              name="id"
+              ng-model="id"
+              placeholder="Enter you id"
+              required
+            /><br />
+            <span ng-show="myForm.$submitted || myForm.name.$dirty">
+              <span class="error" ng-show="myForm.name.$error.required"
+                ><i class="fa fa-info-circle" aria-hidden="true"></i>Id is
+                required</span
+              >
+          </div>
+        <div class="form-group">
+          <input
+            type="text"
+            name="name"
+            ng-model="name"
+            placeholder="Enter you name"
+            pattern="[a-zA-Z]{1,}"
+            required
+          /><br />
+          <span ng-show="myForm.$submitted || myForm.name.$dirty">
+            <span class="error" ng-show="myForm.name.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i>Name is
+              required</span
+            ><span class="error" ng-show="myForm.name.$error.pattern"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> Name is not
+              a number</span
+            ></span
+          >
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            name="email"
+            ng-model="email"
+            placeholder="Enter you email"
+            required
+          /><br />
+          <span ng-show="myForm.$submitted || myForm.email.$dirty">
+            <span class="error" ng-show="myForm.email.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> email is
+              required</span
+            ><span class="error" ng-show="myForm.email.$error.email"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> email is
+              invalid</span
+            ></span
+          >
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            name="password"
+            ng-model="password"
+            placeholder="Enter you password"
+            ng-minlength="8"
+            required
+          /><br />
+          <span ng-show="myForm.$submitted || myForm.password.$dirty">
+            <span class="error" ng-show="myForm.password.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> password is
+              required</span
+            ><span class="error" ng-show="myForm.password.$error.minlength"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> password
+              must be of 8 digits</span
+            ></span
+          >
+        </div>
+        <div class="form-group">
+          <input
+            type="radio"
+            name="gender"
+            ng-model="gender"
+            ng-value='"Male"'
+            required
+          />
+          <label>Male</label>
+          <input
+            type="radio"
+            name="gender"
+            ng-model="gender"
+            ng-value='"Female"'
+            required
+          />
+          <label>Female</label><br />
+          <span ng-show="myForm.$submitted || myForm.gender.$dirty">
+            <span class="error" ng-show="myForm.gender.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> gender is
+              required</span
+            ></span
+          >
+        </div>
+
+        <div class="form-group">
+          <input
+            type="date"
+            name="dob"
+            ng-model="dob"
+            placeholder="Enter date of birth"
+            required
+          /><br />
+          <span ng-show="myForm.$submitted || myForm.date.$dirty">
+            <span class="error" ng-show="myForm.date.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> Date is
+              required</span
+            ></span
+          >
+        </div>
+
+        <div class="form-group">
+          <textarea
+            type="textarea"
+            name="address"
+            ng-model="address"
+            placeholder="Enter your address"
+            required
+          ></textarea
+          ><br />
+          <span ng-show="myForm.$submitted || myForm.address.$dirty">
+            <span class="error" ng-show="myForm.address.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> Address is
+              required</span
+            ></span
+          >
+        </div>
+
+        <div class="form-group">
+          <input
+            type="number"
+            name="phoneNumber"
+            ng-model="phoneNumber"
+            placeholder="Enter your Number"
+            ng-maxlength="10"
+            ng-minlength="10"
+            required
+          /><br />
+          <span ng-show="myForm.$submitted || myForm.phoneNumber.$dirty">
+            <span class="error" ng-show="myForm.phoneNumber.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> Phone Number
+              is required</span
+            ><span
+              class="error"
+              ng-show="((myForm.phoneNumber.$error.minlength || myForm.phoneNumber.$error.maxlength))"
+            >
+              Phone Number must be of 10 digits</span
+            ></span
+          >
+        </div>
+
+        <div class="form-group">
+          <select name="vaccineName" ng-model="vaccineName" required>
+            <option>Covishield</option>
+
+            <option>Covaxin</option>
+
+            <option>Sputnik</option></select
+          ><br />
+
+          <span ng-show="myForm.$submitted || myForm.vaccineName.$dirty">
+            <span class="error" ng-show="myForm.vaccineName.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i> Vaccine 
+              name is required</span
+            ></span
+          >
+        </div>
+
+        <div class="form-group">
+          <input
+            type="radio"
+            name="vstatus"
+            ng-model="vstatus"
+            ng-value='"Dose1"'
+            required
+          />
+          <label>Dose1</label>
+          <input
+            type="radio"
+            name="vstatus"
+            ng-model="vstatus"
+            ng-value='"Dose2"'
+            required
+          />
+          <label>Dose2</label><br />
+
+          <span ng-show="myForm.$submitted || myForm.vstatus.$dirty">
+            <span class="error" ng-show="myForm.vstatus.$error.required"
+              ><i class="fa fa-info-circle" aria-hidden="true"></i>vaccine
+              status is required</span
+            ></span
+          >
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-danger"
+          ng-click="saveData(id,name,email,password,gender,dob,address,phoneNumber,vaccineName,vstatus)"
+        >
+          Save
+        </button>
+        <br /><br />
+      </form>
+    </div>
+    <br />
+    <br />
+    
+ 
+
+    
+  </body>
+</html>

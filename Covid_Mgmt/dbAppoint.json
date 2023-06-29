@@ -1,0 +1,16 @@
+{
+  "appointUsers": [
+    {
+      "id": "12",
+      "name": "mansi",
+      "email": "mdhingra@bebotechnologies.com",
+      "password": "3523rfq2",
+      "gender": "Female",
+      "dod": "2023-04-04T18:30:00.000Z",
+      "address": "erferg",
+      "phoneNumber": 3456532212,
+      "vaccineName": "Covaxin",
+      "vstatus": "Dose1"
+    }
+  ]
+}

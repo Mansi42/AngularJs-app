@@ -1,0 +1,121 @@
+{
+  "regusers": [
+    {
+      "name": "ritika",
+      "email": "ritika@gmail.com",
+      "password": "3243566778",
+      "gender": "Female",
+      "date": "rfdfvhjfdhvbk",
+      "address": 2334455667,
+      "phoneNumber": "Btech",
+      "id": 1
+    },
+    {
+      "name": "mansi",
+      "email": "mdhingra@bebotechnologies.com",
+      "password": "manjwudhy8q7",
+      "gender": "Female",
+      "date": "garhdiwala",
+      "address": 9893821623,
+      "phoneNumber": "Btech",
+      "id": 2
+    },
+    {
+      "name": "ashrey",
+      "email": "a@gmail.com",
+      "password": "1234rtfds",
+      "gender": "Male",
+      "date": "mohali",
+      "address": 1234567887,
+      "phoneNumber": "Btech",
+      "id": 3
+    },
+    {
+      "name": "shruti",
+      "email": "sh@gmail.com",
+      "password": "23435678ug",
+      "gender": "Female",
+      "date": "garhdiwala",
+      "address": 2345678077,
+      "phoneNumber": "BSC",
+      "id": 4
+    },
+    {
+      "name": "nargis",
+      "email": "nargis@gmail.com",
+      "password": "nargis123",
+      "gender": "Female",
+      "date": "sultanpur Lodhi",
+      "address": 1234567886,
+      "id": 5
+    },
+    {
+      "name": "Mansi",
+      "email": "m@gmail.com",
+      "password": "mansi123",
+      "gender": "Female",
+      "dob": "garhdiwala dist hoshiarpur",
+      "address": 9982876376,
+      "id": 6
+    },
+    {
+      "name": null,
+      "email": null,
+      "password": null,
+      "gender": null,
+      "dob": "xdcvfdxfvdg",
+      "address": 1234567423,
+      "id": 7
+    },
+    {
+      "name": "mansi",
+      "email": "mansi@123",
+      "password": "12345hgdc",
+      "gender": "Female",
+      "dob": null,
+      "address": "fdsrgfs",
+      "phoneNumber": 1234567896,
+      "id": 8
+    },
+    {
+      "name": "shiffali",
+      "email": "shiffali@gmail.com",
+      "password": "shiffali@123",
+      "gender": "Female",
+      "dob": "2023-04-11T18:30:00.000Z",
+      "address": "hoshiarpur",
+      "phoneNumber": 9832567613,
+      "id": 9
+    },
+    {
+      "name": null,
+      "email": null,
+      "password": null,
+      "gender": null,
+      "dob": null,
+      "address": null,
+      "phoneNumber": null,
+      "id": 10
+    },
+    {
+      "name": "mansi",
+      "email": "mansi@123",
+      "password": "sddsadas",
+      "gender": "Female",
+      "dob": "2023-04-03T18:30:00.000Z",
+      "address": "dcdxc",
+      "phoneNumber": 4534653233,
+      "id": 11
+    },
+    {
+      "name": "gurjeet",
+      "email": "g@gmail.com",
+      "password": "sfdfsfsds",
+      "gender": "Male",
+      "dob": "2023-04-11T18:30:00.000Z",
+      "address": "shahkot",
+      "phoneNumber": 4322421312,
+      "id": 12
+    }
+  ]
+}

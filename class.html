@@ -1,0 +1,25 @@
+<table border="1">
+        
+        <tr ng-hide="check">
+          <th>Name</th>
+          <th>Age</th>
+          <th >City</th>
+        </tr>
+        
+        <!-- <tr ng-repeat="x in class  | orderBy:'name':'reverse'">
+          <td>{{x.name}}</td>
+          <td>{{x.age}}</td>
+          <td>{{x.city}}</td>
+        </tr> -->
+        <input type="text" placeholder="Search here" ng-model="search" />
+        <input type="checkbox" ng-model="check" >Hide Table</input>
+      
+        <tr ng-repeat="x in class  | filter:search" ng-hide="check">
+         
+          <td>{{x.name}}</td>
+          <td>{{x.age}}</td>
+          <td>{{x.city}}</td>
+       
+        </tr>
+      
+      </table>

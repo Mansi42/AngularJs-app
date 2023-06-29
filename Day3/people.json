@@ -1,0 +1,20 @@
+{
+  "records": [
+    {
+      "name": "mansi",
+      "age": "35"
+    },
+    {
+      "name": "shruti",
+      "age": "25"
+    },
+    {
+      "name": "nargis",
+      "age": "15"
+    },
+    {
+      "name": "ritika",
+      "age": "31"
+    }
+  ]
+}

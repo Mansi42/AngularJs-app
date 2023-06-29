@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="day2">
+  <head>
+
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"
+  ></script>
+    <script src="../angularjs.js"></script>
+    <script src="Day2.js"></script>
+  </head>
+  <body>
+    <div>
+      <input type="text" placeholder="Enter any color" ng-model="color" />
+    </div>
+    <br />
+    <h2 ng-bind="color"></h2>
+    <br />
+    <div>
+      <input type="text" placeholder="Enter any color"/>
+    </div>
+    <br />
+    <h2 ng-bind="color1"></h2>
+    <br />
+    <div ng-controller="Day2">
+ 
+      <h3>{{date | date:"yyyy"}}<h6>(Date Filter)</h3>
+      <h2>{{amount | currency}}<h6>(Currency Filter)</h6></h2>
+      <ul>
+        <h6>(In this OrderBy filter is used which makes the list bydefault in ascending order)</h6>
+        <li ng-repeat="items in fruits | orderBy" }>{{items}}</li>
+      </ul>
+      <br />
+      <h6>(In this limitTo filter is used which filters top rows)</h6>
+      <ol>
+        <li ng-repeat="(x,y) in employee | limitTo : 3" >{{x}} = {{y}}</li>
+      </ol>
+      <br />
+      <table class="table table-info" border="1">
+        
+        <tr ng-hide="check">
+          <th>Name</th>
+          <th>Age</th>
+          <th >City</th>
+        </tr>
+        
+        <!-- <tr ng-repeat="x in class  | orderBy:'name':'reverse'">
+          <td>{{x.name}}</td>
+          <td>{{x.age}}</td>
+          <td>{{x.city}}</td>
+        </tr> -->
+        <input type="text" placeholder="Search here" ng-model="search" />
+        <input type="checkbox" ng-model="check" >Hide Table</input>
+      <h6>Here Search filter is used</h6>
+        <tr ng-repeat="x in class  | filter:search" ng-hide="check">
+         
+          <td>{{x.name}}</td>
+          <td>{{x.age}}</td>
+          <td>{{x.city}}</td>
+       
+        </tr>
+      
+      </table>
+      <br />
+      
+    
+        
+      </div>
+    
+    </div>
+
+   
+      
+
+<h6>Shared Scope</h6>
+    <h2>{{myname}}</h2>
+<br>
+<!-- scopes ------------------------------------------->
+<h6>Isolated scope</h6>
+
+<div ng-controller="ctrl1"><h2>{{color}}</h2></div>
+<br>
+<h6>Inherited Scope</h6>
+    <div ng-controller="ctrl1">
+      <div ng-controller="ctrl2">
+      <h2>{{color}}</h2>
+      </div>
+    </div>
+  </body>
+</html>

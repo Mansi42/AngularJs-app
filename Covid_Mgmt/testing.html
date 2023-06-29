@@ -1,0 +1,71 @@
+<div
+  id="exportable"
+  class="table-responsive"
+  style="overflow: scroll; width: 100%; height: 700px"
+>
+  <br />
+
+  <table class="table" id="datatable">
+    <thead>
+      <tr>
+        @*
+        <th>elapsed_time</th>
+        *@
+        <th style="display: none">ticket_id</th>
+        <th style="display: none">sub_ticket_id</th>
+        <th ng-click="sort('ticket')">Ticket Id</th>
+        <th ng-click="sort('status')">Status</th>
+        <th style="display: none">reference_ticket_id</th>
+        <th ng-click="sort('ticket_type_name')">Ticket Type</th>
+        <th>Department</th>
+        <th ng-click="sort('request_type')">Type</th>
+        <th ng-click="sort('request_sub_type')">Item</th>
+        <th ng-click="sort('subject')">Reason</th>
+        <th ng-click="sort('priority')">Priority</th>
+        <th ng-click="sort('elapsed_time')">Elapsed Time</th>
+        <th ng-click="sort('reference_ticket')">Ref. Ticket Id</th>
+        <th style="display: none">Requires Closure</th>
+        <th ng-click="sort('ticket')">Created Date</th>
+        <th style="display: none">Referred By</th>
+        <th style="display: none">Mode Of Complaint</th>
+
+        <th>Show details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        ng-repeat="Data in MyTicketsList |filter : Search | orderBy:sortKey:reverse"
+      >
+        <td style="display: none" class="center">{{Data.ticket_id}}</td>
+        <td style="display: none" class="center">{{Data.sub_ticket_id}}</td>
+        <td class="center">{{Data.ticket}}</td>
+        <td class="center">{{Data.status}}</td>
+        <td style="display: none" class="center">
+          {{Data.reference_ticket_id}}
+        </td>
+        <td class="center">{{Data.ticket_type_name}}</td>
+        <td class="center">{{Data.department_name}}</td>
+        <td class="center">{{Data.request_type}}</td>
+        <td class="center">{{Data.request_sub_type}}</td>
+        <td class="center">{{Data.subject}}</td>
+        <td class="center">{{Data.priority}}</td>
+        <td class="center">{{Data.elapsed_time}}</td>
+        <td class="center">{{Data.reference_ticket}}</td>
+        <td style="display: none" class="center">{{Data.requires_closure}}</td>
+        <td class="center">{{Data.created_date}}</td>
+        <td style="display: none" class="center">{{Data.referred_by}}</td>
+        <td style="display: none" class="center">{{Data.modeOfComplaint}}</td>
+
+        <td>
+          <a
+            href="#myModal"
+            class="Edit_b"
+            data-toggle="modal"
+            ng-click="ShowConversations(Data)"
+            >Show</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
